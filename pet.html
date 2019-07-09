@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hedgehogs are Cool</title>
+  <link rel="stylesheet" href="hedgepage.css">
+  <script src="hedgepage2.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 20px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: black;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Home {background-color: peachpuff;}
+#FunFacts {background-color: powderblue}
+#HedgehogCare {background-color: pink;}
+#picsvids {background-color: palegreen;}
+</style>
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('Home', this, 'orange')">Home</button>
+<button class="tablink" onclick="openPage('FunFacts', this, 'royalblue')" id="defaultOpen">Fun Facts</button>
+<button class="tablink" onclick="openPage('HedgehogCare', this, 'deeppink')">Hedge-Care</button>
+<button class="tablink" onclick="openPage('picsvids', this, 'limegreen')">Extras!</button>
+
+<div id="Home" class="tabcontent">
+  <h3>What is a Hedgehog?</h3>
+  <p>A hedgehog is any of the spiny mammals of the subfamily Erinaceinae, in the eulipotyphlan family Erinaceidae. There are seventeen species of hedgehog in five genera found through parts of Europe, Asia, and Africa, and in New Zealand by introduction.</p>
+  <p>Life span: 2 - 5 years
+  <p><img id="hog"
+    alt = "A hedgehog laying with its feet up in the air on a grassy field"
+    src = "hog.jpg"</img> </p>
+
+</div>
+
+<div id="FunFacts" class="tabcontent">
+  <h3>Fun Facts</h3>
+  <p>1. A group of hedgehogs is called an "array."</p>
+  <p>2. Hedgehogs are illegal in some parts of the United States.</p>
+  <p>3. A hedgehog has between 5000 and 7000 quills.</p>
+  <p>4. There are 17 different species of hedgehogs, non of which are native to America.</p>
+</div>
+
+<div id="HedgehogCare" class="tabcontent">
+  <h3>Hedgehog Care Tips:</h3>
+  <p>*Clear eyes: The hog should appear alert; the eyes should not be crusty, sunken, or swollen.</p>
+  <p>*Clean fur and quills: While some anointing is normal (see below), fecal matter around the anus may indicate diarrhea or other underlying health issues.</p>
+  <p>*Hold the hedgehog every day as you let it get used to you. This may be as simple as placing it in your lap and talking to it. Encourage trust by giving it treats by hand, and add an old t-shirt you've worn for a day to its enclosure so it gets accustomed to your smell.</p>
+</div>
+
+<div id="picsvids" class="tabcontent">
+  <h3>Extras</h3>
+  <p>Enjoy the hedgehogs!</p>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+</html>
